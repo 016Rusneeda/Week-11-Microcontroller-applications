@@ -109,7 +109,7 @@ $$LSB = \frac{3.3V}{2^{12}} = \frac{3.3V}{4096} \approx 0.806mV$$
 ### โค้ดตัวอย่าง
 // การทดลองที่ 1: อ่านค่า Potentiometer
 // ตัวอย่างพื้นฐาน ADC ของ ESP32 โดยใช้ ESP-IDF
-
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -200,6 +200,7 @@ void app_main(void)
         vTaskDelay(pdMS_TO_TICKS(500));  // หน่วงเวลา 500ms
     }
 }
+```
 ### คำถามสำหรับการทดลองที่ 1
 1. เมื่อหมุน Potentiometer ไปทางซ้ายสุด ค่า ADC ที่ได้คือเท่าไร?
    ตอบ 0
@@ -235,7 +236,7 @@ void app_main(void)
 - เมื่อแสงน้อย ความต้านทาน LDR เพิ่มขึ้น → แรงดันที่ ADC อ่านได้ลดลง
 // การทดลองที่ 2: เซนเซอร์แสง LDR
 // Light Sensor with ESP32 ADC using ESP-IDF
-
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -338,6 +339,7 @@ void app_main(void)
         vTaskDelay(pdMS_TO_TICKS(1000));  // หน่วงเวลา 1 วินาที
     }
 }
+```
 ## การทดลองที่ 3 - การปรับปรุงความแม่นยำของ ADC
 
 ### วัตถุประสงค์
@@ -349,7 +351,7 @@ void app_main(void)
 3. **Filtering**: การกรองสัญญาณรบกวน
 // การทดลองที่ 3: ปรับปรุงความแม่นยำ ADC
 // Enhanced ADC Reading with Oversampling and Filtering using ESP-IDF
-
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -490,6 +492,7 @@ void app_main(void)
         vTaskDelay(pdMS_TO_TICKS(2000));  // หน่วงเวลา 2 วินาที
     }
 }
+```
 ## โจทย์ท้าทาย 
 
 1. ออกแบบระบบควบคุมแสง LED โดยใช้ค่าจาก LDR
@@ -522,4 +525,5 @@ void app_main(void)
 2. **การวิเคราะห์ error**:
    - Quantization error สูงสุดของ 12-bit ADC คือเท่าไร?
    - เหตุใดการใช้ oversampling จึงช่วยลด noise ได้?
+
 
